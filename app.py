@@ -36,9 +36,6 @@ def signup():
     connection.commit() 
     return jsonify({"message":"User registraction successfully"})
 
-
-
-
 # member signin/login
 # 1.  DEfine your route/endpoint
 @app.route("/api/signin",methods=["POST"])
@@ -72,87 +69,6 @@ def signin():
         # fetch the user.
         user=cursor.fetchone()
         return jsonify({"message":"login successfully"})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 # run the application
 app.run(debug=True)
