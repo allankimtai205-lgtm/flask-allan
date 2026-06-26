@@ -53,7 +53,7 @@ def signin():
         database="modcomallankimtai",
     )
     # 5.  Define the cursor
-    cursor=connection.cursor()
+    cursor=connection.cursor(pymysql.cursors.DictCursor)
     # 6.define sql to select user
     sql="select *from users where email=%s and password=%s"
     # 7.  Define your data 
@@ -68,7 +68,7 @@ def signin():
     if cursor.rowcount==1:
         # fetch the user.
         user=cursor.fetchone()
-        return jsonify({"message":"login successfully"})
+        return jsonify({"message":"login successfully","user":user})
 
 # run the application
 app.run(debug=True)
